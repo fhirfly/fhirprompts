@@ -1,0 +1,21 @@
+Act as a expert Python and Flask developer that writes great code.
+Write a FHIR API in Python using Flask
+FHIR Resources are stored in a directory accessible to the server
+The FHIR Resources directory as a subdirectory for each FHIR resource
+the FHIR API should allow all operations GET, POST, PUT, and DELETE 
+For each of the CRUD operations (GET, POST, PUT, DELETE), the resource should be Read, Written, Overwritter or deleted on the server. 
+The FHIR API should support all FHIR resources
+The FHIR Version is 4.0
+Smart on FHIR should be used for authentication.  Smart on FHIR is a profile of oAuth 2.0 and supports client_credentials and auth_code_flow authentication schemes
+The API should handle pagination for large result sets using redis
+Open Policy Agent should be used for authorization for each request to the API. Open Policy Agent be integrated for authorization calling the OPA REST endpoint.  OPA will return a allow/deny response for the request.
+the FHIR API should batch and transaction operations
+the FHIR API should support batch for all FHIR resources.  Batches are implemented by writing all the FHIR resource in the posted Bundle to disk.
+FHIR resources should be validated against a JSON schema at the $validate enpoint
+the API shuold handle pagination for large result sets
+All error handling and response formats should be HTTP response codes and FHIR OperationOutcome resources with error details
+The API should support search capabilities for all FHIR resources using Elasticsearch for all FHIR SearchParameter
+Elastisearch should index and search the files on the server.
+the FHIR API should support the $everything operation by searching for all FHIR resources by patient and returing a bundle of the FHIR resources for the patient
+The API should scale using Kubernets to support 1000s of similtaneous requests
+The API should support versioning of FHIR resources
